@@ -1,0 +1,40 @@
+<!Doctype html>
+<html lang="id">
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>Hapus Artwork</title>
+		<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="sidebar">
+		<h2>Admin Menu</h2>
+		<a href="admin-add.html">+ artwork</a>
+		<a href="admin-remove.html">- artwork</a>
+		<a href="index.html">Logout</a>
+	</div> 
+
+	<div class="main">
+		<h1>Hapus Artwork</h1>
+		<form>
+		   <input type="text" placeholder="Nama Artis" required>
+		   <button type="submit">Cari</button>		
+		</form>
+		<div>
+			<p>Hasil Pencarian: Artwork 1</p>
+			<button>Hapus</button>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+	<script>
+     // Ganti dengan URL dan key project Supabase Anda
+     const supabaseUrl = 'https://hdonylfjnpnacbrkrnxs.supabase.co'
+     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhkb255bGZqbnBuYWNicmtybnhzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ5MDA4MDIsImV4cCI6MjA3MDQ3NjgwMn0.3wPIJl3Dpjz0z23wh-IKDZT-AzTveii3HcbsZJBafpk'
+     const supabase = supabase.createClient(supabaseUrl, supabaseKey)
+   </script>
+</body>
+</html>
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadArtworks()">
+  <div class="sidebar">
+    <h2>Menu</h2>
+    <a href="index.html">Home</a>
+    <a href="about.html">About us</a>
+    <a href="login.html">Admin</a>
+  </div>
+
+  <div class="main">
+    <h1>Public Gallery</h1>
+    <div id="gallery">
+      <a href="detail.html"><img src="https://via.placeholder.com/150" alt="Art 1"></a>
+      <a href="detail.html"><img src="https://via.placeholder.com/150" alt="Art 2"></a>
+      <a href="detail.html"><img src="https://via.placeholder.com/150" alt="Art 3"></a>
+    </div>
+  </div>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+	<script>
+     // Ganti dengan URL dan key project Supabase Anda
+     const supabaseUrl = 'https://hdonylfjnpnacbrkrnxs.supabase.co'
+     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhkb255bGZqbnBuYWNicmtybnhzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ5MDA4MDIsImV4cCI6MjA3MDQ3NjgwMn0.3wPIJl3Dpjz0z23wh-IKDZT-AzTveii3HcbsZJBafpk'
+     const supabase = supabase.createClient(supabaseUrl, supabaseKey)
+   </script>
+</body>
+</html>

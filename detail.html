@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Artwork</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="sidebar">
+    <h2>Menu</h2>
+    <a href="index.html">Home</a>
+    <a href="about.html">About us</a>
+  </div>
+
+  <div class="main">
+    <!-- Tombol kembali -->
+    <button class="close-btn" onclick="window.location.href='index.html'">×</button>
+    
+    <!-- Konten utama detail -->
+    <div class="detail-container">
+      <img src="https://via.placeholder.com/500" alt="Artwork Besar" class="detail-image">
+      
+      <aside class="detail-info">
+        <h2>Nama artis</h2>
+        <p>Judul karya</p>
+      </aside>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+	<script>
+     // Ganti dengan URL dan key project Supabase Anda
+     const supabaseUrl = 'https://hdonylfjnpnacbrkrnxs.supabase.co'
+     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhkb255bGZqbnBuYWNicmtybnhzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ5MDA4MDIsImV4cCI6MjA3MDQ3NjgwMn0.3wPIJl3Dpjz0z23wh-IKDZT-AzTveii3HcbsZJBafpk'
+     const supabase = supabase.createClient(supabaseUrl, supabaseKey)
+   </script>
+</body>
+</html>
