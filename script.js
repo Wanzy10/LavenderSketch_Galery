@@ -60,22 +60,38 @@ async function deleteImage(id) {
 }
 
 // 5. Fungsi untuk upload gambar ke Storage
+/**
+ * Mengunggah file gambar ke Supabase Storage.
+ * @param {File} file Objek File yang akan diunggah.
+ * @returns {Promise<string|null>} URL publik gambar yang diunggah atau null jika gagal.
+ */
 async function uploadImage(file) {
-    const fileExt = file.name.split('.').pop()
-    const fileName = ${Math.random()}.${fileExt}
+    // Memperbaiki nama bucket dari 'images' menjadi 'art-images'
+    const bucketName = 'art-images';
+
+    // Memperbaiki sintaksis string (menggunakan backticks ``) untuk nama file
+    const fileExt = file.name.split('.').pop();
+    const fileName = `${Math.random()}.${fileExt}`;
     
-    const { error } = await supabase.storage
-        .from('images')
-        .upload(fileName, file)
+    // Mengunggah file ke bucket yang benar
+    const { error: uploadError } = await supabase.storage
+        .from(bucketName)
+        .upload(fileName, file);
     
-    if (error) {
-        console.error('Error uploading image:', error)
-        return null
+    if (uploadError) {
+        console.error('Error uploading image:', uploadError);
+        return null;
     }
     
+    // Mendapatkan URL publik dari file yang baru diunggah
     const { data: { publicUrl } } = supabase.storage
-        .from('images')
-        .getPublicUrl(fileName)
+        .from(bucketName) // Menggunakan nama bucket yang sama
+        .getPublicUrl(fileName);
     
-    return publicUrl
+    if (!publicUrl) {
+      console.error('Error getting public URL');
+      return null;
+    }
+
+    return publicUrl;
 }
