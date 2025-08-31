@@ -30,5 +30,23 @@
      const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhkb255bGZqbnBuYWNicmtybnhzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ5MDA4MDIsImV4cCI6MjA3MDQ3NjgwMn0.3wPIJl3Dpjz0z23wh-IKDZT-AzTveii3HcbsZJBafpk'
      const supabase = supabase.createClient(supabaseUrl, supabaseKey)
    </script>
+<script type="module">
+    import { login } from "./auth.js";
+
+    document.getElementById("loginBtn").addEventListener("click", async () => {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      const result = await login(username, password);
+
+      if (result.user) {
+        alert("Login sukses! Selamat datang " + result.user.username);
+        // redirect ke halaman lain kalau mau
+        // window.location.href = "dashboard.html";
+      } else {
+        alert("Login gagal: " + result.error);
+      }
+    });
+  </script>
 </body>
 </html>
