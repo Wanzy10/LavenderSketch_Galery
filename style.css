@@ -2,11 +2,12 @@ body {
 	margin: 0;
 	font-family: arial, sans-serif;
 	display: flex;
+ background color: #1e202c;
 }
 
 .sidebar {
 	width: 220px;
-	background-color: #222;
+	background-color: #60519b;
 	color: white;
 	height: 100vh;
 	padding: 20px;
@@ -46,4 +47,13 @@ body {
 	object-fit: cover;
 	margin: 10px;
 	cursor: pointer;
+}
+
+.loginform {
+ background color: #60519b;
+ width: 300px;
+ margin: 0 auto;
+ padding: 20px;
+ border: 1px solid #ccc;
+ border-radius: 5px;
 }
