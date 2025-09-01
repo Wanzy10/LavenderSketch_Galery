@@ -50,7 +50,7 @@ body {
 	cursor: pointer;
 }
 
-.loginform {
+ form {
  background color: #60519b;
  width: 300px;
  margin: 0 auto;
