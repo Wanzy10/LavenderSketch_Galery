@@ -2,7 +2,7 @@ body {
 	margin: 0;
 	font-family: arial, sans-serif;
 	display: flex;
- background color: #1e202c;
+ background-color: #1e202c;
 }
 
 .sidebar {
@@ -39,6 +39,7 @@ body {
 	padding: 20px;
 	width: 100%;
 	box-sizing: border-box;
+
 }
 
 .gallery img {
