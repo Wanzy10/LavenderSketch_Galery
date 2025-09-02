@@ -4,10 +4,8 @@ import { createClient } from '@supabase/supabase-js'
 const SUPABASE_URL = 'https://eodwiaerjvjijdmlvnfm.supabase.co'
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVvZHdpYWVyanZqaWpkbWx2bmZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ5NzEyNzIsImV4cCI6MjA3MDU0NzI3Mn0.WG6AMJP0lG97rETmfcl8iD9Ghlrmjii3lQgam5hlZjE'
 
-export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
 
-// fungsi login
-// Event listener tombol login
 document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("login-form");
 
@@ -22,26 +20,29 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Cek ke tabel admin
-    const { data, error } = await supabase
-      .from("admin")
-      .select("*")
-      .eq("username", username)
-      .eq("password", password)
-      .single(); // supaya hasilnya hanya satu
+    try {
+      const { data, error } = await supabaseClient
+        .from("admin")
+        .select("*")
+        .eq("username", username)
+        .eq("password", password)
+        .single();
 
-    if (error) {
-      console.error(error);
-      alert("Terjadi kesalahan saat login!");
-      return;
-    }
+      if (error) {
+        console.error(error);
+        alert("Login gagal, coba lagi!");
+        return;
+      }
 
-    if (data) {
-      // Jika username & password sesuai
-      alert("Login berhasil!");
-      window.location.href = "admin-add.html";
-    } else {
-      alert("Username atau password salah!");
+      if (data) {
+        alert("Login berhasil!");
+        window.location.href = "admin-add.html";
+      } else {
+        alert("Username atau password salah!");
+      }
+    } catch (err) {
+      console.error("Unexpected error:", err);
+      alert("Terjadi error tak terduga.");
     }
   });
 });
