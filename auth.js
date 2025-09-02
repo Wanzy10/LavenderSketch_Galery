@@ -1,4 +1,3 @@
-import { createClient } from '@supabase/supabase-js'
 
 // Ganti ini dengan data dari Supabase
 const SUPABASE_URL = 'https://eodwiaerjvjijdmlvnfm.supabase.co'
