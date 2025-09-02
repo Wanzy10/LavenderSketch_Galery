@@ -1,11 +1,11 @@
 // Jangan ada "import ..." di atas!
 
 // Ganti dengan URL & anon key project kamu
-const supabaseUrl = 'https://hdonylfjnpnacbrkrnxs.supabase.co'
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhkb255bGZqbnBuYWNicmtybnhzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ5MDA4MDIsImV4cCI6MjA3MDQ3NjgwMn0.3wPIJl3Dpjz0z23wh-IKDZT-AzTveii3HcbsZJBafpk'
+const supabaseUrl = 'https://hdonylfjnpnacbrkrnxs.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhkb255bGZqbnBuYWNicmtybnhzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ5MDA4MDIsImV4cCI6MjA3MDQ3NjgwMn0.3wPIJl3Dpjz0z23wh-IKDZT-AzTveii3HcbsZJBafpk';
 
-// Buat client
-const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+// Buat client (pakai variabel yang bener)
+const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
 document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("login-form");
