@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .select("*")
       .eq("username", username)
       .eq("password", password)
-      .single();
+      .limit(1);
 
     console.log("Data:", data);
     console.log("Error:", error);
