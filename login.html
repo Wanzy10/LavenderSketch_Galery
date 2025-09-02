@@ -9,11 +9,11 @@
 <body>
 
 <div class="login">
-    <h2>Login</h2>
-    <form id="loginForm">
+     <h1>Login</h1>
+    <form id="login-form">
         <div>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
         </div>
         <div>
             <label for="password">Password:</label>
@@ -21,34 +21,13 @@
         </div>
         <button type="submit">Login</button>
     </form>
-    <div id="message"></div>
+    <div id="error-message" style="color: red; display: none;"></div>
  </div>
     
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-    <script>
-     // Ganti dengan URL dan key project Supabase Anda
-     const supabaseUrl = 'https://hdonylfjnpnacbrkrnxs.supabase.co'
-     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhkb255bGZqbnBuYWNicmtybnhzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ5MDA4MDIsImV4cCI6MjA3MDQ3NjgwMn0.3wPIJl3Dpjz0z23wh-IKDZT-AzTveii3HcbsZJBafpk'
-     const supabase = supabase.createClient(supabaseUrl, supabaseKey)
-   </script>
-<script type="module">
-    import { login } from "./auth.js";
+    <!-- Supabase JavaScript CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-    document.getElementById("loginBtn").addEventListener("click", async () => {
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
-
-      const result = await login(username, password);
-
-      if (result.user) {
-        alert("Login sukses! Selamat datang " + result.user.username);
-        // redirect ke halaman lain kalau mau
-        // window.location.href = "dashboard.html";
-      } else {
-        alert("Login gagal: " + result.error);
-      }
-    });
-  </script>
+    <!-- Memuat file JavaScript terpisah -->
+    <script src="auth.js"></script>
 </body>
 </html>
